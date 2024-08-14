@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Gerencia Imóveis</title>
+    <title>GerenciaImoveis</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,15 +11,6 @@
   </head>
 
   <body>
-    <div class="page">
-      <%= render "layouts/admin/header" %>
-      <%= render "layouts/admin/navbar" %>
-      <div class="page-wrapper">
-        <div class="page-body">
-          <%= yield %>
-        </div>
-      </div>
-      <%= render "layouts/admin/footer" %>
-    </div>
+    <%= yield %>
   </body>
 </html>
