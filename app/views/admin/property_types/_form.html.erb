@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title"><%= resource_form_title %></h4>
+  </div>
+  <%= simple_form_for [:admin, @property_type] do |form| %>
+    <div class="card-body">
+      <%= form.input :name %>
+    </div>
+
+    <div class="card-footer">
+      <%= form.button :button %>
+    </div>
+  <% end %>

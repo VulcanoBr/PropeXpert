@@ -1,0 +1,7 @@
+pt-BR:
+  resources:
+    admin:
+      property_types:
+        collection: Tipos de Imóvel
+        new: Novo Tipo
+        edit: Editar Tipo
