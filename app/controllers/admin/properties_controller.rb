@@ -3,8 +3,8 @@ module Admin
     PERMITED_PARAMS = [
       :contract_type, :address_zip_code, :address_state, :address_city,
       :address_neighborhood, :address_line_1, :address_number, :address_line_2,
-      :title, :size, :price, :tax, :condominium_fee, :bedroom_count,
-      :bathroom_count
+      :title, :description, :size, :price, :tax, :condominium_fee, :bedroom_count,
+      :bathroom_count, photos: []
     ].freeze
 
     before_action :load_property, only: [:edit, :update, :destroy]

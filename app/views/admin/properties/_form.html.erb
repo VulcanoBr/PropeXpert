@@ -54,6 +54,7 @@
     <%= form.input :bedroom_count %>
     <%= form.input :bathroom_count %>
 
+    <%= form.input :photos, input_html: { multiple: true } %>
 
     <% component.with_footer do %>
       <%= form.button :button %>

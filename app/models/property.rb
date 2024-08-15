@@ -16,6 +16,8 @@ class Property < ApplicationRecord
 
   has_rich_text :description
 
+  has_many_attached :photos
+
   monetize :condominium_fee_cents, allow_nil: true
   monetize :price_cents
   monetize :tax_cents, allow_nil: true
