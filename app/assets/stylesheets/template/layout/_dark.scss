@@ -67,11 +67,11 @@ body {
         )};
     }
 
-    .navbar-brand-autodark {
-      .navbar-brand-image {
-        @include autodark-image;
-      }
-    }
+    // .navbar-brand-autodark {
+    //   .navbar-brand-image {
+    //     @include autodark-image;
+    //   }
+    // }
   }
 
   body[data-bs-theme=dark] [data-bs-theme=light] {
