@@ -1,3 +1,9 @@
 <div class="container-xl d-flex flex-column justify-content-center">
   <h1>Seja Bem-vindo!</h1>
+
+  <%= turbo_frame_tag "properties_list",
+                      src: admin_properties_path(hide_filter: true, admin_property_search_form: { order_type: "most_recent" }),
+                      loading: :lazy do %>
+    Carregando...
+  <% end %>
 </div>

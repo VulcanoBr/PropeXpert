@@ -1,0 +1,15 @@
+<div class="page-header d-print-none mb-4">
+  <div class="container-xl">
+    <div class="d-flex align-items-center">
+      <h2 class="page-title flex-grow-1">
+        <%= resource_collection_title %>
+      </h2>
+      <% if action_name == "index" %>
+        <%= link_to new_admin_property_path, class: "btn btn-primary", data: { turbo_frame: "_top" } do %>
+          <i class="ti ti-plus"></i>
+          Adicionar Novo
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
