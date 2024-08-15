@@ -1,6 +1,14 @@
 pt-BR:
   resources:
     admin:
+      property_situations:
+        collection: Situações do Imóvel
+        new: Nova Situação
+        edit: Editar Situação
+      property_standard_items:
+        collection: Características do Imóvel
+        new: Nova Característica
+        edit: Editar Característica
       property_types:
         collection: Tipos de Imóvel
         new: Novo Tipo

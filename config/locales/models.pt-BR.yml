@@ -1,9 +1,15 @@
 pt-BR:
   models:
     models: &model_names
+      property_standard_item: Característica
+      property_situation: Situação
       property_type: Tipo de Imóvel
       user: Usuário
     attributes: &model_attributes
+      property_standard_item:
+        name: Nome
+      property_situation:
+        name: Nome
       property_type:
         name: Nome
       user:

@@ -1,0 +1,21 @@
+<tr>
+  <td data-label="Name">
+    <div class="d-flex py-1 align-items-center">
+      <div class="flex-fill">
+        <div class="font-weight-medium">
+          <%= property_standard_item.name %>
+        </div>
+      </div>
+    </div>
+  </td>
+  <td>
+    <div class="btn-list flex-nowrap">
+      <%= link_to edit_admin_property_standard_item_path(property_standard_item), class: "btn btn-icon" do %>
+        <i class="ti ti-pencil"></i>
+      <% end %>
+      <%= button_to admin_property_standard_item_path(property_standard_item), method: :delete, class: "btn btn-danger btn-icon", data: { turbo_confirm: 'Você tem certeza?' } do %>
+        <i class="ti ti-trash"></i>
+      <% end %>
+    </div>
+  </td>
+</tr>

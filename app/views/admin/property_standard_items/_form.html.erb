@@ -1,0 +1,9 @@
+<%= simple_form_for [:admin, @property_standard_item] do |form| %>
+  <%= render(CardComponent.new(title: resource_form_title, variant: 'light')) do |component| %>
+    <%= form.input :name %>
+
+    <% component.with_footer do %>
+      <%= form.button :button %>
+    <% end %>
+  <% end %>
+<% end %>
