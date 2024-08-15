@@ -1,6 +1,10 @@
 <%= simple_form_for [:admin, @property] do |form| %>
   <%= render(CardComponent.new(title: resource_form_title, variant: 'light')) do |component| %>
     <%= form.input :contract_type, collection: { Aluguel: 'rent', Venda: 'sell' }, include_blank: false %>
+
+    <%= form.association :property_type %>
+    <%= form.association :property_situation %>
+
     <div class="row">
       <div class="col-12 col-md-4">
         <%= form.input :address_zip_code %>
@@ -53,6 +57,8 @@
 
     <%= form.input :bedroom_count %>
     <%= form.input :bathroom_count %>
+
+    <%= form.association :property_standard_items, as: :check_boxes, wrapper: :horizontal_collection %>
 
     <%= form.input :photos, input_html: { multiple: true } %>
 

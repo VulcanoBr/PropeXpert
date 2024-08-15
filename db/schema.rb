@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_13_161108) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_03_201746) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -73,6 +73,19 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_13_161108) do
     t.integer "tax_cents"
     t.string "tax_currency"
     t.string "contract_type", limit: 20, default: "rent"
+    t.bigint "property_type_id"
+    t.bigint "property_situation_id"
+    t.index ["property_situation_id"], name: "index_properties_on_property_situation_id"
+    t.index ["property_type_id"], name: "index_properties_on_property_type_id"
+  end
+
+  create_table "property_linked_items", force: :cascade do |t|
+    t.bigint "property_id", null: false
+    t.bigint "property_standard_item_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["property_id"], name: "index_property_linked_items_on_property_id"
+    t.index ["property_standard_item_id"], name: "index_property_linked_items_on_property_standard_item_id"
   end
 
   create_table "property_situations", force: :cascade do |t|
@@ -219,6 +232,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_13_161108) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "properties", "property_situations"
+  add_foreign_key "properties", "property_types"
+  add_foreign_key "property_linked_items", "properties"
+  add_foreign_key "property_linked_items", "property_standard_items"
   add_foreign_key "solid_queue_blocked_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade
   add_foreign_key "solid_queue_claimed_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade
   add_foreign_key "solid_queue_failed_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade

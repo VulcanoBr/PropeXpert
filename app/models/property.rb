@@ -1,6 +1,11 @@
 class Property < ApplicationRecord
   enum contract_type: { rent: 'rent', sell: 'sell' }
 
+  belongs_to :property_type
+  belongs_to :property_situation
+  has_many :property_linked_items
+  has_many :property_standard_items, through: :property_linked_items
+
   validates :address_zip_code, presence: true
   validates :address_zip_code, length: { is: 9, allow_blank: true }
   validates :address_state, presence: true

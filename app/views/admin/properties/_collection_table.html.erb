@@ -1,14 +1,37 @@
-<div class="card mb-4">
-  <div class="card-header">
-    <h3 class="card-title">Lista</h3>
-    <div class="card-actions">
-      <%= link_to new_admin_property_path, class: "btn btn-primary" do %>
-        <i class="ti ti-plus"></i>
-        Adicionar Novo
-      <% end %>
+<%= simple_form_for @form, url: admin_properties_path, method: :get do |form| %>
+  <div class="card mb-4">
+    <div class="card-header">
+      <h3 class="card-title">Lista</h3>
+      <div class="card-actions">
+        <%= link_to new_admin_property_path, class: "btn btn-primary" do %>
+          <i class="ti ti-plus"></i>
+          Adicionar Novo
+        <% end %>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-3">
+          <%= form.input :bedroom_count_min %>
+
+        </div>
+        <div class="col-12 col-sm-6 col-md-3">
+          <%= form.input :bathroom_count_min %>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3">
+          <%= form.input :size_min %>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3">
+          <%= form.input :price_min %>
+        </div>
+      </div>
+      <%= form.input :property_type_ids, collection: form.object.property_type_collection, as: :check_boxes, multiple: true, include_blank: false %>
+    </div>
+    <div class="card-footer">
+      <%= form.button :button, "Consultar" %>
     </div>
   </div>
-</div>
+<% end %>
 
 <div class="d-flex flex-column gap-4">
   <%= render Admin::PropertyCardComponent.with_collection(@properties) %>

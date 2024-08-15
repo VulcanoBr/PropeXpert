@@ -1,16 +1,23 @@
 module Admin
   class PropertiesController < BaseController
+    FILTER_PERMITED_PARAMS= [
+      :bedroom_count_min, :bathroom_count_min, :size_min, :price_min,
+      property_type_ids: []
+    ].freeze
+
     PERMITED_PARAMS = [
-      :contract_type, :address_zip_code, :address_state, :address_city,
-      :address_neighborhood, :address_line_1, :address_number, :address_line_2,
-      :title, :description, :size, :price, :tax, :condominium_fee, :bedroom_count,
-      :bathroom_count, photos: []
+      :contract_type, :property_type_id, :property_situation_id,
+      :address_zip_code, :address_state, :address_city, :address_neighborhood,
+      :address_line_1, :address_number, :address_line_2, :title, :description,
+      :size, :price, :tax, :condominium_fee, :bedroom_count, :bathroom_count,
+      property_standard_item_ids: [], photos: []
     ].freeze
 
     before_action :load_property, only: [:edit, :update, :destroy]
 
     def index
-      @properties = Property.order(:title)
+      @form = PropertySearchForm.new filter_params
+      @properties = @form.submit
     end
 
     def new
@@ -44,6 +51,12 @@ module Admin
     end
 
     private
+
+    def filter_params
+      return {} unless params[:admin_property_search_form]
+
+      params.require(:admin_property_search_form).permit(*FILTER_PERMITED_PARAMS)
+    end
 
     def load_property
       @property = Property.find params[:id]

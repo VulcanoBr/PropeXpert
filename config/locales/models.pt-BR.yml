@@ -7,8 +7,16 @@ pt-BR:
       property_type: Tipo de Imóvel
       user: Usuário
     attributes: &model_attributes
+      admin/property_search_form:
+        bedroom_count_min: Quartos (mínimo)
+        bathroom_count_min: Banheiros (mínimo)
+        size_min: Tamanho Mínimo (m²)
+        price_min: Preço (mínimo)
+        property_type_ids: Tipos de Imóvel
       property:
         contract_type: Tipo do Contrato
+        property_type: Tipo do Imóvel
+        property_situation: Situação
         title: Resumo
         description: Descrição
         address_zip_code: CEP
@@ -24,6 +32,8 @@ pt-BR:
         condominium_fee: Taxa de Condomínio
         bedroom_count: Número de Quartos
         bathroom_count: Número de Banheiros
+        property_standard_items: Items e Melhorias
+        photos: Fotos do Imóvel
       property_standard_item:
         name: Nome
       property_situation:
