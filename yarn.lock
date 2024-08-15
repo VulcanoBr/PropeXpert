@@ -281,6 +281,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tabler/icons-webfont@npm:^3.10.0":
+  version: 3.10.0
+  resolution: "@tabler/icons-webfont@npm:3.10.0"
+  dependencies:
+    "@tabler/icons": "npm:3.10.0"
+  checksum: 10c0/7ff51089aa184b5150a2281fd416f0db180282a09cb0f07d5c3df4a776e1007acca3b5dc8a1c8253fa4a799ed3e130d6dad713c37b003fd400bad3438fc9c268
+  languageName: node
+  linkType: hard
+
+"@tabler/icons@npm:3.10.0":
+  version: 3.10.0
+  resolution: "@tabler/icons@npm:3.10.0"
+  checksum: 10c0/8b6b3d481a822b4bcdd7467a0d0dc14e7e7af56d98e61f9794bffc564c50be1fd0af1d216fcbf36e123916ac8f8a790fa8e60eeb9bbcfd40a2b7549a3888c7ad
+  languageName: node
+  linkType: hard
+
 "abbrev@npm:^2.0.0":
   version: 2.0.0
   resolution: "abbrev@npm:2.0.0"
@@ -354,6 +370,7 @@ __metadata:
     "@hotwired/stimulus": "npm:^3.2.2"
     "@hotwired/turbo-rails": "npm:^8.0.4"
     "@popperjs/core": "npm:^2.11.8"
+    "@tabler/icons-webfont": "npm:^3.10.0"
     autoprefixer: "npm:^10.4.19"
     bootstrap: "npm:^5.3.3"
     bootstrap-icons: "npm:^1.11.3"

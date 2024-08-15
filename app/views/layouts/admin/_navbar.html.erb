@@ -29,6 +29,18 @@
                   <span class="nav-link-title"> Página Inicial </span>
                 <% end %>
               </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#navbar-help" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" >
+                  <i class="nav-link-icon fs-2 d-md-none d-lg-inline-block ti ti-list"></i>
+                  <span class="nav-link-title">
+                    Tabelas Auxiliares
+                  </span>
+                </a>
+                <div class="dropdown-menu">
+                  <%= link_to "Tipos de Imóvel", admin_property_types_path, class: "dropdown-item" %>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
