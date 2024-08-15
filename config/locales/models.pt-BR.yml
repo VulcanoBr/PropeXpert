@@ -1,0 +1,25 @@
+pt-BR:
+  models:
+    models: &model_names
+      property_type: Tipo de Imóvel
+      user: Usuário
+    attributes: &model_attributes
+      property_type:
+        name: Nome
+      user:
+        name: Nome
+        email: E-mail
+        password: Senha
+        password_confirmation: Confirme sua Senha
+
+  activerecord:
+    models:
+      <<: *model_names
+    attributes:
+      <<: *model_attributes
+
+  activemodel:
+    models:
+      <<: *model_names
+    attributes:
+      <<: *model_attributes
