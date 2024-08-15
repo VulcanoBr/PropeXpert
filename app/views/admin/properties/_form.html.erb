@@ -1,0 +1,62 @@
+<%= simple_form_for [:admin, @property] do |form| %>
+  <%= render(CardComponent.new(title: resource_form_title, variant: 'light')) do |component| %>
+    <%= form.input :contract_type, collection: { Aluguel: 'rent', Venda: 'sell' }, include_blank: false %>
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <%= form.input :address_zip_code %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-4">
+        <%= form.input :address_state %>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <%= form.input :address_city %>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <%= form.input :address_neighborhood %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-9">
+        <%= form.input :address_line_1 %>
+      </div>
+      <div class="col-12 col-md-3">
+        <%= form.input :address_number %>
+      </div>
+    </div>
+
+    <%= form.input :address_line_2 %>
+
+    <%= form.input :title %>
+
+    <%= form.input :description do %>
+      <%= form.rich_text_area :description %>
+    <% end %>
+
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-3">
+        <%= form.input :size %>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <%= form.input :price %>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <%= form.input :tax %>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <%= form.input :condominium_fee %>
+      </div>
+    </div>
+
+    <%= form.input :bedroom_count %>
+    <%= form.input :bathroom_count %>
+
+
+    <% component.with_footer do %>
+      <%= form.button :button %>
+    <% end %>
+  <% end %>
+<% end %>

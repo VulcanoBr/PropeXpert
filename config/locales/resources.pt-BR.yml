@@ -1,6 +1,10 @@
 pt-BR:
   resources:
     admin:
+      properties:
+        collection: Imóveis
+        new: Novo Imóvel
+        edit: Editar Imóvel
       property_situations:
         collection: Situações do Imóvel
         new: Nova Situação
