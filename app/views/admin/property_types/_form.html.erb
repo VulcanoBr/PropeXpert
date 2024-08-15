@@ -1,13 +1,9 @@
-<div class="card">
-  <div class="card-header">
-    <h4 class="card-title"><%= resource_form_title %></h4>
-  </div>
-  <%= simple_form_for [:admin, @property_type] do |form| %>
-    <div class="card-body">
-      <%= form.input :name %>
-    </div>
+<%= simple_form_for [:admin, @property_type] do |form| %>
+  <%= render(CardComponent.new(title: resource_form_title, variant: 'light')) do |component| %>
+    <%= form.input :name %>
 
-    <div class="card-footer">
+    <% component.with_footer do %>
       <%= form.button :button %>
-    </div>
+    <% end %>
   <% end %>
+<% end %>
